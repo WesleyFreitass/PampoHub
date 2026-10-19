@@ -1,0 +1,49 @@
+name: Deploy Pampo Hub na VPS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Sincronizar e Subir Container na VPS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Executar Deploy via SSH na VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          port: ${{ secrets.VPS_PORT }}
+          script_stop: true
+          script: |
+            echo "=================================================="
+            echo "🚀 [CI/CD] Iniciando Deploy do Pampo Hub na VPS..."
+            echo "=================================================="
+
+            # Auto-clone: se a pasta /root/pampo-hub não existir, clona o repositório
+            if [ ! -d "/root/pampo-hub" ]; then
+              echo "📦 Repositório não encontrado na VPS. Clonando..."
+              git clone https://github.com/${{ github.repository }}.git /root/pampo-hub
+            fi
+
+            cd /root/pampo-hub
+
+            echo "📥 Atualizando código-fonte com a branch main..."
+            git clean -fd
+            git fetch origin main
+            git reset --hard origin/main
+
+            echo "🐳 Construindo imagem Docker e subindo container (porta 3100)..."
+            docker compose up -d --build --remove-orphans
+
+            echo "🔍 Verificando status do container pampo-hub..."
+            docker ps --filter "name=pampo-hub" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+
+            echo "=================================================="
+            echo "✅ [CI/CD] Deploy do Pampo Hub concluído com sucesso!"
+            echo "=================================================="
