@@ -41,6 +41,14 @@ jobs:
             echo "🐳 Construindo imagem Docker e subindo container (porta 3100)..."
             docker compose up -d --build --remove-orphans
 
+            echo "🌐 Garantindo configuração do Nginx host para pampo.tech..."
+            if [ ! -f "/etc/nginx/sites-available/pampo-hub" ] && [ -f "/root/pampo-hub/nginx/pampo-hub.conf" ]; then
+              echo "⚙️ Configurando proxy reverso Nginx para pampo.tech -> 127.0.0.1:3100..."
+              cp /root/pampo-hub/nginx/pampo-hub.conf /etc/nginx/sites-available/pampo-hub
+              ln -sf /etc/nginx/sites-available/pampo-hub /etc/nginx/sites-enabled/
+              nginx -t && systemctl reload nginx
+            fi
+
             echo "🔍 Verificando status do container pampo-hub..."
             docker ps --filter "name=pampo-hub" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 
