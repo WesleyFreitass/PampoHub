@@ -1,15 +1,15 @@
 # ==========================================
 # Stage 1: Build da aplicação React / Vite
 # ==========================================
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# Copiar manifestos de dependências para cache inteligente
-COPY package*.json ./
+# Copiar manifesto de dependências
+COPY package.json ./
 
-# Instalar dependências
-RUN npm ci || npm install
+# Instalar dependências limpas
+RUN npm install --no-audit --no-fund
 
 # Copiar todo o código-fonte
 COPY . .
