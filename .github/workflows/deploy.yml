@@ -49,6 +49,11 @@ jobs:
               nginx -t && systemctl reload nginx
             fi
 
+            echo "🔒 Verificando/Emitindo Certificado SSL Let's Encrypt para pampo.tech..."
+            if command -v certbot > /dev/null 2>&1; then
+              certbot --nginx -d pampo.tech -d hub.pampo.tech --non-interactive --agree-tos -m wesleyafreitas@outlook.com --redirect || true
+            fi
+
             echo "🔍 Verificando status do container pampo-hub..."
             docker ps --filter "name=pampo-hub" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 
