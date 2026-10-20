@@ -46,10 +46,8 @@ jobs:
             ln -sf /etc/nginx/sites-available/pampo-hub /etc/nginx/sites-enabled/
             nginx -t && systemctl reload nginx
 
-            echo "🔒 Verificando/Emitindo Certificado SSL Let's Encrypt para pampo.tech e pampohub.pampo.tech..."
-            if command -v certbot > /dev/null 2>&1; then
-              certbot --nginx -d pampo.tech -d www.pampo.tech -d pampohub.pampo.tech --non-interactive --agree-tos -m wesleyafreitas@outlook.com --redirect || certbot --nginx -d pampo.tech --non-interactive --agree-tos -m wesleyafreitas@outlook.com --redirect
-            fi
+            echo "🔒 Emitindo Certificado SSL Let's Encrypt para pampo.tech e pampohub.pampo.tech..."
+            certbot --nginx -d pampo.tech -d pampohub.pampo.tech --non-interactive --agree-tos -m wesleyafreitas@outlook.com --redirect || echo "⚠️ Certbot aguardando propagação completa."
 
             echo "🔍 Verificando status do container pampo-hub..."
             docker ps --filter "name=pampo-hub" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
