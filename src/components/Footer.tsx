@@ -14,12 +14,15 @@ export const Footer: React.FC = () => {
   return (
     <footer className="relative bg-[#05070B] border-t border-white/[0.08] pt-16 pb-12 overflow-hidden text-slate-400">
       
+      {/* Ambient Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-48 bg-gradient-to-t from-violet-600/10 via-cyan-500/5 to-transparent blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
+        {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/[0.08]">
           
+          {/* Brand Info (2 Cols) */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-violet-500/20">
@@ -41,7 +44,7 @@ export const Footer: React.FC = () => {
             <div className="pt-2 flex items-center gap-3 text-xs font-mono text-slate-400">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900 border border-white/[0.08] text-slate-300">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                VPS 187.127.17.88
+                Pampo Cloud Cluster
               </span>
               <span className="px-2.5 py-1 rounded-full bg-slate-900 border border-white/[0.08] text-cyan-300">
                 Nginx Reverse Proxy
@@ -49,6 +52,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
+          {/* Solutions Column */}
           <div>
             <h4 className="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold mb-4">
               Aplicações Ativas
@@ -70,6 +74,7 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Infrastructure Column */}
           <div>
             <h4 className="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold mb-4">
               Infraestrutura
@@ -99,6 +104,7 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Quick Terminal / DevOps */}
           <div>
             <h4 className="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold mb-4">
               DevOps &amp; Deploy
@@ -118,6 +124,7 @@ export const Footer: React.FC = () => {
 
         </div>
 
+        {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-slate-400 text-center sm:text-left">
             &copy; {new Date().getFullYear()} <strong className="text-slate-200">Pampo Tech</strong>. Todos os direitos reservados.

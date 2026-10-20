@@ -15,7 +15,7 @@
 
 ## 🌟 Sobre o Projeto
 
-O **Pampo Tech Hub** é a página inicial oficial da empresa Pampo Tech, centralizando todos os sistemas, microsserviços e aplicações hospedadas na nossa VPS Linux dedicada (`187.127.17.88`).
+O **Pampo Tech Hub** é a página inicial oficial da empresa Pampo Tech, centralizando todos os sistemas, microsserviços e aplicações hospedadas em nossa infraestrutura dedicada de alta performance.
 
 ### 📱 Aplicações em Produção
 
@@ -44,9 +44,9 @@ O **Pampo Tech Hub** é a página inicial oficial da empresa Pampo Tech, central
    - *Porta Host:* `:3080`
 
 5. **FretFlow**
-   - *Categoria:* Logística & Gestão
+   - *Categoria:* Música & Educação
    - *URL:* https://fretflow.pampo.tech
-   - *Stack:* React, TypeScript, Node.js, OSRM Routing, ANTT Engine
+   - *Stack:* React 19, TypeScript, Web Audio API, Canvas / SVG Fretboard
    - *Porta Host:* `:3090`
 
 6. **Pampo Tech Hub (Este Portal)**

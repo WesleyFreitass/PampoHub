@@ -7,7 +7,8 @@ import {
   Truck, 
   Cpu, 
   Server, 
-  Layers
+  Layers,
+  Music
 } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 import type { AppItem } from '../data/apps';
@@ -26,6 +27,8 @@ export const AppIcon: React.FC<AppIconProps> = ({ name, ...props }) => {
       return <Gamepad2 {...props} />;
     case 'Mic':
       return <Mic {...props} />;
+    case 'Music':
+      return <Music {...props} />;
     case 'Truck':
       return <Truck {...props} />;
     case 'Cpu':

@@ -28,6 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
+          {/* Logo & Brand Identity */}
           <a href="#" className="flex items-center gap-3.5 group">
             <div className="relative">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow duration-300">
@@ -59,6 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
             </div>
           </a>
 
+          {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1.5 p-1 rounded-full bg-slate-900/60 border border-white/[0.08] backdrop-blur-md">
             <a 
               href="#catalogo" 
@@ -76,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
               href="#topologia" 
               className="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] rounded-full transition-all"
             >
-              Topologia VPS
+              Topologia Cloud
             </a>
             <a 
               href="#status" 
@@ -86,15 +88,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
             </a>
           </nav>
 
+          {/* Right Actions & Status Indicator */}
           <div className="hidden lg:flex items-center gap-3">
+            {/* Live Operational Badge */}
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
               </span>
-              <span>VPS 100% Online</span>
+              <span>Cluster 100% Online</span>
             </div>
 
+            {/* Quick Search Shortcut */}
             {onSearchFocus && (
               <button
                 onClick={onSearchFocus}
@@ -108,15 +113,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
               </button>
             )}
 
+            {/* Terminal SSH Action without raw IP */}
             <a
               href="#topologia"
               className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-md shadow-violet-600/20 transition-all"
             >
               <Terminal className="w-3.5 h-3.5" />
-              <span>SSH 187.127.17.88</span>
+              <span>Pampo Cloud Node</span>
             </a>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -129,12 +136,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
 
         </div>
 
+        {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-3 p-4 rounded-2xl bg-slate-900/95 border border-white/[0.1] backdrop-blur-2xl shadow-2xl flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 duration-200">
             <div className="flex items-center justify-between pb-3 border-b border-white/[0.08]">
               <div className="flex items-center gap-2 text-xs font-mono text-emerald-400">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                VPS 187.127.17.88 Operacional
+                Pampo Cloud Cluster Operacional
               </div>
               <span className="text-[11px] text-slate-400">5 Serviços Ativos</span>
             </div>

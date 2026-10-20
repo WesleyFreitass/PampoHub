@@ -38,10 +38,12 @@ export const InfraSection: React.FC = () => {
   return (
     <section id="infraestrutura" className="py-20 md:py-28 relative scroll-mt-20">
       
+      {/* Background decoration */}
       <div className="absolute inset-0 bg-radial-glow opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-4">
             <Server className="w-3.5 h-3.5" />
@@ -60,6 +62,7 @@ export const InfraSection: React.FC = () => {
           </p>
         </div>
 
+        {/* 6 Key Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {INFRA_FEATURES.map((item, idx) => (
             <div 
@@ -82,6 +85,7 @@ export const InfraSection: React.FC = () => {
           ))}
         </div>
 
+        {/* Interactive VPS Topology Diagram */}
         <div id="topologia" className="rounded-3xl bg-slate-900/90 border border-white/[0.1] p-6 sm:p-8 backdrop-blur-2xl shadow-2xl relative overflow-hidden scroll-mt-24">
           
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/[0.08]">
@@ -93,7 +97,7 @@ export const InfraSection: React.FC = () => {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                Servidor Host: <strong className="text-slate-200 font-mono">187.127.17.88</strong> • Roteamento reverso com SSL Let's Encrypt
+                Ambiente: <strong className="text-slate-200 font-mono">Pampo Cloud Cluster (Dedicado)</strong> • Roteamento reverso com SSL Let's Encrypt
               </p>
             </div>
 
@@ -110,8 +114,10 @@ export const InfraSection: React.FC = () => {
             </div>
           </div>
 
+          {/* Topology Architecture Visual Scheme */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             
+            {/* Stage 1: Clients & Ingress (3 Cols) */}
             <div className="lg:col-span-3 flex flex-col gap-3">
               <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold mb-1 flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-violet-400"></span>
@@ -129,10 +135,12 @@ export const InfraSection: React.FC = () => {
               </div>
             </div>
 
+            {/* Connecting Arrow */}
             <div className="hidden lg:flex items-center justify-center lg:col-span-1 text-slate-600">
               <ArrowRight className="w-6 h-6 text-slate-400" />
             </div>
 
+            {/* Stage 2: Nginx Gateway (3 Cols) */}
             <div className="lg:col-span-3 flex flex-col gap-3">
               <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold mb-1 flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
@@ -151,15 +159,17 @@ export const InfraSection: React.FC = () => {
                 </p>
                 <div className="text-[10px] text-slate-400 font-mono flex items-center gap-1">
                   <HardDrive className="w-3 h-3 text-cyan-400" />
-                  Host: 187.127.17.88
+                  Cluster: Linux Dedicated Node
                 </div>
               </div>
             </div>
 
+            {/* Connecting Arrow */}
             <div className="hidden lg:flex items-center justify-center lg:col-span-1 text-slate-600">
               <ArrowRight className="w-6 h-6 text-slate-400" />
             </div>
 
+            {/* Stage 3: Containers Grid (4 Cols) */}
             <div className="lg:col-span-4 flex flex-col gap-2">
               <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold mb-1 flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
@@ -170,6 +180,7 @@ export const InfraSection: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 gap-2 max-h-[280px] overflow-y-auto pr-1">
+                {/* FakeDC */}
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/70 border border-white/[0.06] text-xs font-mono">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -183,6 +194,7 @@ export const InfraSection: React.FC = () => {
                   </div>
                 </div>
 
+                {/* RealClima */}
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/70 border border-white/[0.06] text-xs font-mono">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -196,6 +208,7 @@ export const InfraSection: React.FC = () => {
                   </div>
                 </div>
 
+                {/* LoGames */}
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/70 border border-white/[0.06] text-xs font-mono">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -209,6 +222,7 @@ export const InfraSection: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Voice AI */}
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/70 border border-white/[0.06] text-xs font-mono">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -222,10 +236,11 @@ export const InfraSection: React.FC = () => {
                   </div>
                 </div>
 
+                {/* FretFlow (Guitar / Music Platform) */}
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/70 border border-white/[0.06] text-xs font-mono">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    <span className="text-white font-medium">FretFlow Core</span>
+                    <span className="text-white font-medium">FretFlow Guitar Engine</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-slate-400">:3090</span>
@@ -235,6 +250,7 @@ export const InfraSection: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Pampo Hub */}
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-violet-950/40 border border-violet-500/40 text-xs font-mono">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -253,13 +269,14 @@ export const InfraSection: React.FC = () => {
 
           </div>
 
+          {/* Bottom Security & UFW Note */}
           <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-slate-400">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Firewall UFW Ativo: Portas isoladas e expostas apenas sob proxy Nginx seguro.</span>
             </div>
             <div className="text-cyan-400 bg-slate-800/80 px-3 py-1 rounded-md border border-white/[0.06]">
-              SSH Port: 22 • Protocol: TLS 1.3
+              Proteção UFW Ativa • Protocol: TLS 1.3
             </div>
           </div>
 

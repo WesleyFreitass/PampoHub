@@ -2,7 +2,7 @@ export type AppCategory =
   | 'Todos'
   | 'Comunicação'
   | 'Inteligência Artificial'
-  | 'Logística'
+  | 'Música & Educação'
   | 'Meteorologia'
   | 'Jogos';
 
@@ -31,7 +31,7 @@ export interface AppItem {
   uptime: string;
   latencyAvg: string;
   version: string;
-  icon: 'Radio' | 'CloudSun' | 'Gamepad2' | 'Mic' | 'Truck' | 'Cpu' | 'Server';
+  icon: 'Radio' | 'CloudSun' | 'Gamepad2' | 'Mic' | 'Music' | 'Truck' | 'Cpu' | 'Server';
   gradient: {
     from: string;
     to: string;
@@ -48,7 +48,7 @@ export const CATEGORIES: AppCategory[] = [
   'Todos',
   'Comunicação',
   'Inteligência Artificial',
-  'Logística',
+  'Música & Educação',
   'Meteorologia',
   'Jogos',
 ];
@@ -174,41 +174,41 @@ export const APPS: AppItem[] = [
   {
     id: 'fretflow',
     name: 'FretFlow',
-    tagline: 'Gestão logística inteligente, roteirização e controle de fretes',
-    category: 'Logística',
-    description: 'Plataforma inteligente de gestão de fretes, roteirização, cotações e monitoramento de transporte de cargas.',
-    longDescription: 'O FretFlow é a solução unificada da Pampo Tech para transportadoras e expedidores. Oferece cálculo automatizado de tabelas de frete (ANTT/Mercosul), otimização de rotas rodoviárias com pontos de parada, controle de manifesto eletrônico (MDF-e/CT-e) e painel analítico com telemetria de frotas.',
+    tagline: 'Plataforma interativa para estudo, treino e domínio do braço da guitarra',
+    category: 'Música & Educação',
+    description: 'Plataforma interativa para estudo e treino de guitarra, visualização dinâmica de escalas, acordes, campo harmônico e treino auditivo no braço do instrumento (fretboard).',
+    longDescription: 'O FretFlow é um ecossistema completo para guitarristas e estudantes de música. Oferece visualização dinâmica de escalas pentatônicas, modos gregos, arpejos e formação de tríades e tétrades ao longo de todo o braço da guitarra (fretboard), além de metrônomo programável, faixas de apoio (backing tracks) e exercícios práticos de percepção musical e agilidade.',
     url: 'https://fretflow.pampo.tech',
-    tags: ['Logistics', 'Management', 'Tracking', 'Modern Web', 'Route Optimizer'],
+    tags: ['Guitar', 'Music Theory', 'Fretboard', 'Audio Engine', 'CAGED System', 'Interactive Web'],
     status: 'online',
     statusLabel: 'Operacional',
     uptime: '99.97%',
     latencyAvg: '18ms',
-    version: 'v3.0.1',
-    icon: 'Truck',
+    version: 'v2.2.0',
+    icon: 'Music',
     gradient: {
-      from: 'from-emerald-500',
-      to: 'to-teal-600',
-      glow: 'rgba(16, 185, 129, 0.4)',
-      border: 'hover:border-emerald-500/50',
-      textGradient: 'from-emerald-300 via-teal-200 to-white',
+      from: 'from-amber-500',
+      to: 'to-rose-600',
+      glow: 'rgba(245, 158, 11, 0.4)',
+      border: 'hover:border-amber-500/50',
+      textGradient: 'from-amber-300 via-orange-200 to-white',
     },
     features: [
-      'Motor de cotações instantâneas baseado em cubagem, peso e tabela ANTT',
-      'Roteirização inteligente com cálculo automático de pedágios e paradas de descanso',
-      'Painel de controle para acompanhamento de entregas e status de motoristas',
-      'Emissão de relatórios fiscais, margem de lucratividade e consumo de combustível',
-      'Integração nativa com rastreadores GPS e Webhooks para notificações via WhatsApp'
+      'Mapeamento interativo de todas as notas, escalas e modos gregos no braço da guitarra',
+      'Dicionário visual de acordes com sistema CAGED e inversões de tríades/tétrades',
+      'Exercícios práticos de memorização de notas e intervalos com feedback em tempo real',
+      'Metrônomo inteligente programável com subdivisões rítmicas e acelerômetro de treino',
+      'Player de backing tracks integrado com indicação de tonalidades recomendadas para improviso'
     ],
     architecture: {
-      container: 'fretflow-core',
+      container: 'fretflow-web',
       hostPort: '3090',
       proxy: 'Nginx Reverse Proxy com SSL Seguro',
       ssl: 'Let\'s Encrypt Automated Renewal',
-      stackFrontend: 'React 19, TypeScript, TanStack Query, Tailwind',
-      stackBackend: 'Node.js, PostgreSQL / Prisma, OSRM Routing Engine',
+      stackFrontend: 'React 19, TypeScript, Web Audio API, Canvas / SVG Fretboard',
+      stackBackend: 'Node.js, Audio Engine, Realtime Metronome',
     },
-    featured: false,
+    featured: true,
   },
   {
     id: 'logames',
@@ -226,11 +226,11 @@ export const APPS: AppItem[] = [
     version: 'v1.4.5',
     icon: 'Gamepad2',
     gradient: {
-      from: 'from-amber-500',
-      to: 'to-orange-600',
-      glow: 'rgba(245, 158, 11, 0.4)',
-      border: 'hover:border-amber-500/50',
-      textGradient: 'from-amber-300 via-orange-200 to-white',
+      from: 'from-emerald-500',
+      to: 'to-teal-600',
+      glow: 'rgba(16, 185, 129, 0.4)',
+      border: 'hover:border-emerald-500/50',
+      textGradient: 'from-emerald-300 via-teal-200 to-white',
     },
     features: [
       'Catálogo completo de jogos casuais e web com suporte a gamepads',
@@ -294,7 +294,7 @@ export const INFRA_FEATURES = [
   {
     title: 'VPS Dedicada de Alta Performance',
     description: 'Servidor Linux com kernel otimizado para I/O rápido, baixa latência de rede no Brasil e estabilidade contínua.',
-    badge: '187.127.17.88',
+    badge: 'Linux Dedicated Node',
   },
   {
     title: 'Isolamento Multi-Container com Docker',
