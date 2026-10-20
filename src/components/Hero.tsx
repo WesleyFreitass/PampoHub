@@ -2,7 +2,8 @@ import React from 'react';
 import { 
   ArrowRight, 
   Server, 
-  CheckCircle2
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react';
 import { SYSTEM_METRICS } from '../data/apps';
 
@@ -12,7 +13,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section className="relative pt-32 pb-20 md:pt-36 md:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
       
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-gradient-to-tr from-violet-600/25 via-indigo-500/20 to-cyan-400/20 rounded-full blur-[120px] pointer-events-none" />
@@ -21,7 +22,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/80 border border-violet-500/30 backdrop-blur-md shadow-lg shadow-violet-500/10 mb-8 animate-float">
+        {/* Top Badges */}
+        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/80 border border-violet-500/30 backdrop-blur-md shadow-lg shadow-violet-500/10 mb-6">
           <div className="flex h-2 w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
@@ -32,6 +34,37 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] font-mono bg-violet-500/20 text-violet-300 border border-violet-500/30">
             v2.0
           </span>
+        </div>
+
+        {/* Mascot Showcase Hero Element */}
+        <div className="relative mb-8 flex flex-col items-center">
+          <div className="relative group cursor-pointer">
+            {/* Ambient Multi-Glow Background */}
+            <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-500/25 via-violet-600/20 to-amber-400/20 rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+            
+            {/* Holographic Circular Glass Pedestal */}
+            <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full bg-slate-900/70 border border-cyan-400/30 backdrop-blur-xl p-3 sm:p-4 flex items-center justify-center shadow-2xl shadow-cyan-500/20 group-hover:border-cyan-400/60 group-hover:shadow-cyan-400/40 transition-all duration-300">
+              <img 
+                src="/mascot.png" 
+                alt="Pampo — Mascote Oficial da Pampo Tech" 
+                className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(6,182,212,0.45)] group-hover:scale-110 group-hover:rotate-[-4deg] transition-all duration-300 animate-float"
+              />
+              
+              {/* Online pulse on mascot pedestal */}
+              <span className="absolute bottom-2 right-3 flex h-4 w-4">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-slate-900"></span>
+              </span>
+            </div>
+          </div>
+
+          {/* Interactive Mascot Badge */}
+          <div className="mt-3.5 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/80 border border-white/[0.08] text-[11px] font-mono text-slate-300 shadow-md">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
+            <span>Mascote Oficial: <strong className="text-cyan-300 font-semibold">Pampo</strong></span>
+            <span className="text-slate-600">•</span>
+            <span className="text-amber-300/90 font-medium">Agilidade &amp; Performance</span>
+          </div>
         </div>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-6">

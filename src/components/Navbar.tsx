@@ -31,12 +31,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
           {/* Logo & Brand Identity */}
           <a href="#" className="flex items-center gap-3.5 group">
             <div className="relative">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow duration-300">
-                <div className="w-full h-full bg-[#0B0F17] rounded-[10px] flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300 text-lg tracking-wider">
-                    P
-                  </span>
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-400/40 transition-shadow duration-300">
+                <div className="w-full h-full bg-[#0B0F17] rounded-[10px] flex items-center justify-center relative overflow-hidden p-1">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-amber-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <img 
+                    src="/mascot.png" 
+                    alt="Pampo Tech Mascote" 
+                    className="w-full h-full object-contain filter drop-shadow-[0_2px_6px_rgba(6,182,212,0.4)] group-hover:scale-115 group-hover:rotate-[-4deg] transition-all duration-300" 
+                  />
                 </div>
               </div>
               <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -47,10 +49,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
             
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
-                <span className="font-bold text-lg text-white tracking-tight group-hover:text-violet-300 transition-colors">
+                <span className="font-bold text-lg text-white tracking-tight group-hover:text-cyan-300 transition-colors">
                   Pampo<span className="text-cyan-400">Tech</span>
                 </span>
-                <span className="px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/30">
+                <span className="px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
                   Hub
                 </span>
               </div>
