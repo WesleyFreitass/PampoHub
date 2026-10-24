@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Terminal } from 'lucide-react';
+import { Menu, X, Terminal, LayoutGrid } from 'lucide-react';
 
 interface NavbarProps {
   onSearchFocus?: () => void;
+  onSwitchToMain?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus, onSwitchToMain }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -31,8 +32,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
           {/* Logo & Brand Identity */}
           <a href="#" className="flex items-center gap-3.5 group">
             <div className="relative">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-400/40 transition-shadow duration-300">
-                <div className="w-full h-full bg-[#0B0F17] rounded-[10px] flex items-center justify-center relative overflow-hidden p-1">
+              <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-violet-600 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-400/40 transition-shadow duration-300">
+                <div className="w-full h-full bg-[#0B0F17] rounded-[6px] flex items-center justify-center relative overflow-hidden p-1">
                   <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-amber-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <img 
                     src="/mascot.png" 
@@ -101,6 +102,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
               <span>Cluster 100% Online</span>
             </div>
 
+            {/* Switch to Main Hub */}
+            {onSwitchToMain && (
+              <button
+                onClick={onSwitchToMain}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-semibold transition-colors shadow-sm"
+                title="Voltar ao Hub Principal"
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                <span>Hub Principal</span>
+              </button>
+            )}
+
             {/* Quick Search Shortcut */}
             {onSearchFocus && (
               <button
@@ -148,6 +161,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onSearchFocus }) => {
               </div>
               <span className="text-[11px] text-slate-400">5 Serviços Ativos</span>
             </div>
+
+            {onSwitchToMain && (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onSwitchToMain();
+                }}
+                className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/20 transition-colors"
+              >
+                <LayoutGrid className="w-4 h-4" />
+                <span>Voltar ao Hub Principal</span>
+              </button>
+            )}
 
             <a
               href="#catalogo"

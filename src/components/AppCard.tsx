@@ -43,8 +43,8 @@ export const AppCard: React.FC<AppCardProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           
           <div className="flex items-start sm:items-center gap-4">
-            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${app.gradient.from} ${app.gradient.to} p-0.5 shadow-md shrink-0`}>
-              <div className="w-full h-full bg-[#0B0F17] rounded-[10px] flex items-center justify-center text-white">
+            <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${app.gradient.from} ${app.gradient.to} p-0.5 shadow-md shrink-0`}>
+              <div className="w-full h-full bg-[#0B0F17] rounded-[6px] flex items-center justify-center text-white">
                 <AppIcon name={app.icon} className="w-6 h-6 text-white" />
               </div>
             </div>
@@ -114,8 +114,8 @@ export const AppCard: React.FC<AppCardProps> = ({
       <div>
         <div className="flex items-start justify-between gap-3 mb-5">
           <div className="relative">
-            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient.from} ${app.gradient.to} p-[1.5px] shadow-lg group-hover:scale-105 transition-transform duration-300`}>
-              <div className="w-full h-full bg-[#0B0F17] rounded-[14px] flex items-center justify-center">
+            <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${app.gradient.from} ${app.gradient.to} p-[1.5px] shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+              <div className="w-full h-full bg-[#0B0F17] rounded-[6px] flex items-center justify-center">
                 <AppIcon name={app.icon} className="w-7 h-7 text-white" />
               </div>
             </div>

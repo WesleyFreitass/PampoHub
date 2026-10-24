@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -9,11 +9,23 @@ import { InfraSection } from './components/InfraSection';
 import { StatusSection } from './components/StatusSection';
 import { Footer } from './components/Footer';
 import { Toast } from './components/Toast';
+import { BentoPage } from './components/bento/BentoPage';
 import { APPS } from './data/apps';
 import type { AppCategory, AppItem } from './data/apps';
-import { SearchX } from 'lucide-react';
+import { SearchX, Sparkles } from 'lucide-react';
 
 export function App() {
+  const [pageView, setPageView] = useState<'bento' | 'classic'>(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#/classic') {
+      return 'classic';
+    }
+    return 'bento';
+  });
+
+  useEffect(() => {
+    window.location.hash = pageView === 'classic' ? '#/classic' : '#/bento';
+  }, [pageView]);
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<AppCategory>('Todos');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -70,10 +82,17 @@ export function App() {
     }, 300);
   };
 
+  if (pageView === 'bento') {
+    return <BentoPage onSwitchToClassic={() => setPageView('classic')} />;
+  }
+
   return (
     <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-col selection:bg-violet-600/30 selection:text-violet-200">
       
-      <Navbar onSearchFocus={handleFocusSearch} />
+      <Navbar 
+        onSearchFocus={handleFocusSearch} 
+        onSwitchToMain={() => setPageView('bento')} 
+      />
 
       <Hero onExploreClick={handleFocusSearch} />
 
@@ -150,6 +169,17 @@ export function App() {
         message={toastMessage}
         onClose={() => setToastMessage(null)}
       />
+
+      {/* Floating Button to Switch View */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button
+          onClick={() => setPageView('bento')}
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs shadow-xl shadow-indigo-600/40 border border-indigo-400/30 transition-all hover:scale-105"
+        >
+          <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+          <span>Ver Novo Hub de Aplicações</span>
+        </button>
+      </div>
 
     </div>
   );

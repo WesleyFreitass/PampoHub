@@ -25,8 +25,8 @@ export const Footer: React.FC = () => {
           {/* Brand Info (2 Cols) */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-cyan-500/20">
-                <div className="w-full h-full bg-[#0B0F17] rounded-[9px] flex items-center justify-center p-1 overflow-hidden">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 via-indigo-600 to-cyan-500 p-[1.5px] shadow-lg shadow-cyan-500/20">
+                <div className="w-full h-full bg-[#0B0F17] rounded-[6px] flex items-center justify-center p-1 overflow-hidden">
                   <img 
                     src="/mascot.png" 
                     alt="Pampo Tech" 

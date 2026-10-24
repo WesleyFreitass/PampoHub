@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -59,6 +60,18 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+  .site-canvas-bg {
+    background-color: #0A0F1D;
+    background-image: 
+      radial-gradient(ellipse 100% 80% at 50% -10%, rgba(56, 100, 160, 0.28) 0%, transparent 70%),
+      radial-gradient(circle at 10% 90%, rgba(14, 165, 233, 0.07) 0%, transparent 45%),
+      radial-gradient(circle at 90% 90%, rgba(139, 92, 246, 0.07) 0%, transparent 45%),
+      linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+    background-attachment: fixed;
+  }
+
   .bg-grid-pattern {
     background-size: 36px 36px;
     background-image: 
@@ -72,5 +85,107 @@
 
   .text-glow {
     text-shadow: 0 0 24px rgba(168, 85, 247, 0.4);
+  }
+
+  /* RealClima Falling Rain Animation */
+  @keyframes sky-rain-fall {
+    0% { transform: translateY(-20px); opacity: 0; }
+    15% { opacity: 0.9; }
+    85% { opacity: 0.9; }
+    100% { transform: translateY(280px); opacity: 0; }
+  }
+
+  .sky-rain-drop {
+    position: absolute;
+    width: 1.5px;
+    background: linear-gradient(to bottom, transparent, rgba(56, 189, 248, 0.7), rgba(255, 255, 255, 0.95));
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 9999px;
+  }
+
+  /* Karaoke Stage Spotlights & Disco Ball Keyframes */
+  @keyframes disco-sweep-left {
+    0% { transform: rotate(-30deg); opacity: 0.35; }
+    50% { transform: rotate(18deg); opacity: 0.85; }
+    100% { transform: rotate(-30deg); opacity: 0.35; }
+  }
+
+  @keyframes disco-sweep-right {
+    0% { transform: rotate(28deg); opacity: 0.4; }
+    50% { transform: rotate(-22deg); opacity: 0.9; }
+    100% { transform: rotate(28deg); opacity: 0.4; }
+  }
+
+  @keyframes disco-sweep-center {
+    0% { transform: translate(-50%, 0) rotate(-16deg); opacity: 0.25; }
+    50% { transform: translate(-50%, 0) rotate(16deg); opacity: 0.65; }
+    100% { transform: translate(-50%, 0) rotate(-16deg); opacity: 0.25; }
+  }
+
+  @keyframes disco-sweep-amber {
+    0% { transform: rotate(10deg); opacity: 0.2; }
+    50% { transform: rotate(-24deg); opacity: 0.55; }
+    100% { transform: rotate(10deg); opacity: 0.2; }
+  }
+
+  .animate-disco-sweep-left {
+    animation: disco-sweep-left 5.6s ease-in-out infinite;
+    transform-origin: top left;
+  }
+
+  .animate-disco-sweep-right {
+    animation: disco-sweep-right 4.8s ease-in-out infinite 0.7s;
+    transform-origin: top right;
+  }
+
+  .animate-disco-sweep-center {
+    animation: disco-sweep-center 6.8s ease-in-out infinite 1.4s;
+    transform-origin: top center;
+  }
+
+  .animate-disco-sweep-amber {
+    animation: disco-sweep-amber 6.2s ease-in-out infinite 0.3s;
+    transform-origin: top left;
+  }
+
+  /* Voz App Equalizer Soundwave Animations */
+  @keyframes voz-wave-1 {
+    0%, 100% { height: 18px; }
+    50% { height: 38px; }
+  }
+  @keyframes voz-wave-2 {
+    0%, 100% { height: 38px; }
+    50% { height: 16px; }
+  }
+  @keyframes voz-wave-3 {
+    0%, 100% { height: 48px; }
+    50% { height: 22px; }
+  }
+  @keyframes voz-wave-4 {
+    0%, 100% { height: 16px; }
+    50% { height: 32px; }
+  }
+
+  .animate-voz-wave-1 {
+    animation: voz-wave-1 0.9s ease-in-out infinite;
+  }
+  .animate-voz-wave-2 {
+    animation: voz-wave-2 0.8s ease-in-out infinite 0.15s;
+  }
+  .animate-voz-wave-3 {
+    animation: voz-wave-3 1.05s ease-in-out infinite 0.3s;
+  }
+  .animate-voz-wave-4 {
+    animation: voz-wave-4 0.75s ease-in-out infinite 0.1s;
+  }
+
+  @keyframes vox-wave-5 {
+    0%, 100% { height: 10px; }
+    50% { height: 26px; }
+  }
+
+  .animate-voz-wave-5 {
+    animation: vox-wave-5 0.85s ease-in-out infinite 0.25s;
   }
 }
