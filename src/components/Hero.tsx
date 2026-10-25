@@ -75,8 +75,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
         </h1>
 
         <p className="text-base sm:text-xl text-slate-300/90 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
-          Hub corporativo e vitrine oficial das soluções tecnológicas da <strong className="text-white font-medium">Pampo Tech</strong>. 
-          Sistemas em produção com alta disponibilidade, canais WebRTC acelerados por GPU, inteligência artificial neural e arquitetura Docker isolada em VPS dedicada.
+          Hub corporativo e vitrine oficial das soluções da <strong className="text-white font-medium">Pampo Tech</strong>. 
+          Plataforma central de acesso às nossas aplicações interativas, ferramentas inteligentes e produtos digitais.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
